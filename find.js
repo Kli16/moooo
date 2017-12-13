@@ -31,14 +31,20 @@ var findIt = function(e) {
   box.style.backgroundColor = "hsl(" + hue + ", 100%, " + brightness  + "%)";
   //console.log(box.style.backgroundColor);
   //box.style.background = "rgb(0, " + shade  + ", 0)";
+  if (distance(e.x, e.y, targetX, targetY) < 100){
+    box.innerHTML = "<h1> you are quite close. </h1>";
+  }
+  else {
+    box.innerHTML = "<h1> keep trying </h1>";
+  }
 };
 
 var solved = function(e){
   if (distance(e.x, e.y, targetX, targetY) < 20){
-    box.innerHTML = "<h1> congrats. u found the target </h1>"
+    box.innerHTML = "<h1> CONGRATS. you found the target </h1>"
   }
   else{
-    box.innerHTML = "<h1> u have not found the target. </h1>";
+    box.innerHTML = "<h1> you have not found the target. </h1>";
   }
 }
 
